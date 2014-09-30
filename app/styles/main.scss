@@ -19,20 +19,34 @@ body {
 
 .hero-container {
 	height: 400px;
-	background: url(../images/hero-1.jpg) no-repeat center top;
-	background-size: cover;
+	background: rgba(0,0,0,.4);
 	position: relative;
-
-	img {
-		position: absolute;
-		z-index: -1;
-		top: 0;
-		left: 0;
-		max-width: 100%;
-	}
 
 	@media (min-width: $screen-md-min) {
 		height: 600px;
+	}
+
+	.slider {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		overflow-y: hidden;
+		z-index: -1;
+
+		.slide {
+			width: auto;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			@media (min-width: 600px) {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 
 	.hero-title {
@@ -74,8 +88,25 @@ body {
 			
 			.subheader {
 				position: absolute;
-				right: -2%;
+				right: 10%;
 			}
+		}
+	}
+	.hero-intro {
+		color: #fff;
+		text-align: center;
+		font-weight: 300;
+		display: none;
+
+		@media (min-width: $screen-sm-min) {
+			font-size: 1.3em;
+			display: block;
+		}
+
+		@media (min-width: $screen-md-min) {
+			margin-top: 60px;
+			font-size: 1.5em;
+			font-weight: normal;
 		}
 	}
 }
